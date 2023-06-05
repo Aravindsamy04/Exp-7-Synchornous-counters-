@@ -53,8 +53,36 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: ARAVIND SAMY.P
+RegisterNumber:212222230011
+### UP COUNTER:
+
+module sync(clk,t);
+input clk;
+output reg [0:2]t;
+always@ (posedge clk)
+begin
+t[2]=((t[1]&t[0])^t[2]);
+t[1]=t[0]^t[1];
+t[0]=1^t[0];
+end
+endmodule
+
+### DOWN COUNTER:
+module sync(clk,t);
+input clk;
+output reg [0:2]t;
+wire bar2,bar1,bar0;
+not(bar2,t[2]);
+not(bar1,t[1]);
+not(bar0,t[0]);
+always@ (posedge clk)
+begin
+t[2]=((bar1&bar0)^t[2]);
+t[1]=bar0^t[1];
+t[0]=1^t[0];
+end
+endmodule
 */
 
 
@@ -63,26 +91,40 @@ RegisterNumber:
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+### UP COUNTER:
+
+![UP RTL](https://github.com/Aravindsamy04/Exp-7-Synchornous-counters-/assets/113497037/8eb088cc-f63c-4b0b-92b2-b6a47d8978e8)
+
+### DOWN COUNTER:
 
 
-
-
-
-
+![DOWN RTL](https://github.com/Aravindsamy04/Exp-7-Synchornous-counters-/assets/113497037/d9df028e-1f07-4352-8be8-17220d0cbbc6)
 
 
 
 ### TIMING DIGRAMS FOR COUNTER  
+### UP COUNTER:
+![UP TIMI](https://github.com/Aravindsamy04/Exp-7-Synchornous-counters-/assets/113497037/6bce420b-0dff-4b9d-94e4-88ae4637da51)
 
 
+### DOWN COUNTER:
+
+![DOWN TIMI](https://github.com/Aravindsamy04/Exp-7-Synchornous-counters-/assets/113497037/88f57263-f995-46de-9ebb-4d5ef8bc9ab8)
 
 
 
 ### TRUTH TABLE 
+### UP COUNTER:
+![UP TRUTH](https://github.com/Aravindsamy04/Exp-7-Synchornous-counters-/assets/113497037/bcf6e401-a332-4af5-99b4-916971c91b33)
 
 
+### DOWN COUNTER:
 
 
+![DOWN TRUTH](https://github.com/Aravindsamy04/Exp-7-Synchornous-counters-/assets/113497037/32d17096-25e7-4b30-a2cf-f7318e423fb0)
 
 
-### RESULTS 
+### RESULTS :
+Thus, 4 bit up and down counters are implemented and its functionality is validated successfully.
+
+
