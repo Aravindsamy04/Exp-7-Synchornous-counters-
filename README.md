@@ -46,11 +46,18 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+/* 1.Create a new project in QuartusII software.
+2.Name the project as uc for upcounter and dc for down counter.
+3.Create a new verilog hdl file in the project file.
+4.Name the module as dc and uc for down counter and up counter.
+5.Within the module declare input and output variables.
+6.Create a loop using if-else with condition parameter as reset value.
+7.End the loop.
+8.End the module. */
 
 
 
-### PROGRAM 
+### PROGRAM :
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: ARAVIND SAMY.P
